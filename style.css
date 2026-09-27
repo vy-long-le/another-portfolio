@@ -1,0 +1,242 @@
+/* 1. Design Tokens */
+
+:root {
+  /* Colors */
+  --color-bg: #0f1115;
+  --color-surface: #17191f;
+  --color-sidebar: #1d2027;
+
+  --color-text: #f4f5f8;
+  --color-text-muted: #9ca3af;
+
+  --color-primary: #8b9cff;
+  --color-accent: #a78bfa;
+
+  --color-border: #2c3038;
+  --color-nav: #0a0b0e;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Shape */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+}
+
+/* 2. Reset / Base */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: var(--space-2);
+}
+
+img {
+  width: 100%;
+  max-height: 300px;
+
+  flex-shrink: 0;
+}
+
+/* Images Position */
+
+.container-images {
+  display: flex;
+
+  width: 100%;
+  height: 600px;
+
+  gap: var(--space-3);
+}
+
+.images-column-1 {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+
+  gap: var(--space-3);
+}
+
+.images-column-2 {
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+
+  gap: var(--space-3);
+}
+
+.images-1-topbottom {
+  height: 35%;
+}
+
+.image-1-middle {
+  height: 28%;
+}
+
+.images-2-topbottom {
+  height: 50%;
+}
+
+/* 3. Header / Navigation */
+
+.site-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  background-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.header-content p {
+  margin-top: var(--space-2);
+}
+
+.site-navigation {
+  display: flex;
+
+  gap: var(--space-3);
+
+  padding: var(--space-3);
+  width: 100%;
+
+  background-color: var(--color-nav);
+}
+
+.site-navigation a {
+  color: var(--color-text);
+
+  text-decoration: none;
+
+  border-bottom: 2px solid transparent;
+}
+
+.site-navigation a:hover {
+  color: var(--color-accent);
+
+  border-color: var(--color-accent);
+}
+
+/* 4. Main Layout */
+
+main {
+  display: flex;
+  flex-direction: row;
+
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 280px;
+
+  background-color: var(--color-sidebar);
+
+  padding: var(--space-3);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  flex: 2 1 500px;
+
+  padding: var(--space-3);
+}
+
+/* 5. Components */
+
+.container-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.small-image {
+  background-color: var(--color-surface);
+
+  gap: var(--space-3);
+}
+
+.small-image img {
+  height: 150px;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-4);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+}
+
+.article-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: var(--space-3);
+}
+
+.article-text p {
+  margin-top: 0;
+}
+
+/* 6. Footer */
+
+footer {
+  padding: var(--space-4);
+  text-align: center;
+
+  color: var(--color-text-muted);
+  background-color: var(--color-nav);
+
+  border-top: 1px solid var(--color-border);
+}
+
+/* 7. Responsive */
+
+@media (max-width: 425px) {
+  main {
+    flex-direction: column;
+  }
+
+  .site-navigation {
+    justify-content: center;
+  }
+
+  .container-images {
+    flex-direction: column;
+  }
+
+  .images-column-1,
+  .images-column-2 {
+    width: 100%;
+  }
+}
